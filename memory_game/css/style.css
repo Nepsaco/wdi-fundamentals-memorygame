@@ -60,9 +60,7 @@ footer{
 	letter-spacing: .08em;
 	font-weight: 500;
 	font-family: Raleway;
-	text-align: center;
-
-
+	padding: 5px;
 }
 .copyright {
 	font-family: Raleway;
