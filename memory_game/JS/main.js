@@ -29,15 +29,27 @@ function checkForMatch() {
 	}	
 }
 }
-function flipCard(cardID) {
+function flipCard() {
+	const cardID = this.getAttribute('data-id');
 	cardsInPlay.push(cards[cardID].rank);
 	console.log("User flippled " + cards[cardID].rank);
 	console.log(cards[cardID].cardImage);
 	console.log(cards[cardID].suit);
+	this.setAttribute('src', cards[cardID].cardImage);
 	checkForMatch();	
 }
 
-flipCard(0);
-flipCard(1);
+function createBoard(){
+	for (var i = 0; i <cards.length; i++) {
+		const cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', i);
+		cardElement.addEventListener('click', flipCard);
+		document.getElementById('game-board').appendChild(cardElement);
+	};
+}
+createBoard();
+
+
 
 
